@@ -21,6 +21,7 @@ import Cart from "./components/Cart";
 import Receipt from "./components/Receipt";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
+import { FaShoppingCart } from "react-icons/fa";
 
 function App() {
   const [products, setProducts] = useState([]);
@@ -125,7 +126,10 @@ function App() {
 
       <Modal show={showCart} onHide={toggleCart} size="lg" centered>
         <Modal.Header closeButton>
-          <Modal.Title>Your Cart</Modal.Title>
+          <Modal.Title> <div className="d-flex align-items-center mb-4">
+          <FaShoppingCart className="me-2 text-primary" size={30} />
+          <h4 className="fw-bold mb-0">Your Cart </h4>
+        </div></Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <Cart

@@ -1,74 +1,94 @@
 import React from "react";
-import { Row, Col, Button } from "react-bootstrap";
 
 const ProductList = ({ products, handleAdd, handleDecrease, cart, user }) => {
-  // helper to find item qty from cart
   const getQty = (productId) => {
     const item = cart.items.find((i) => i.productId._id === productId);
     return item ? item.qty : 0;
   };
 
   return (
-    <div>
-      <h2 className="text-center mb-4 text-2xl font-bold text-gray-800">
+    <div className="py-10 px-4 bg-gray-50">
+      <h2 className="text-center mb-10 text-3xl font-semibold text-gray-800 tracking-wide">
         Featured Products
       </h2>
-      <Row>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {products.map((p) => {
           const qty = getQty(p._id);
-          return (
-            <Col key={p._id} md={4} className="mb-4">
-              <div className="card p-3 shadow-sm hover:shadow-lg transition duration-200">
-                <img
-                  src={p.image}
-                  alt={p.name}
-                  className="img-fluid mb-2 rounded"
-                  style={{ height: "220px", objectFit: "cover" }}
-                />
-                <h5 className="text-lg font-semibold">{p.name}</h5>
-                <p className="text-gray-600">₹{p.price}</p>
 
-                {user ? (
-                  qty > 0 ? (
-                    // if already in cart, show quantity controls
-                    <div className="d-flex justify-content-center align-items-center">
-                      <Button
-                        variant="outline-secondary"
-                        size="sm"
-                        onClick={() => handleDecrease(p._id)}
-                      >
-                        −
-                      </Button>
-                      <span className="mx-2">{qty}</span>
-                      <Button
-                        variant="outline-secondary"
-                        size="sm"
+          return (
+            <div
+              key={p._id}
+              className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all duration-300 flex flex-col"
+            >
+              {/* Product Image */}
+                        {/* Product Image */}
+            <div className="w-full h-64 flex items-center justify-center overflow-hidden rounded-t-lg bg-gray-100 group">
+              <img
+                src={p.image}
+                alt={p.name}
+                className="w-full h-full object-contain transform transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+
+
+              {/* Product Details */}
+              <div className="p-4 flex flex-col flex-grow">
+                {/* Name with fixed display height */}
+                <h5 className="text-base font-semibold text-gray-800 line-clamp-2 min-h-[48px]">
+                  {p.name}
+                </h5>
+
+                
+
+                {/* Price Always in same place */}
+                <p className="text-lg font-bold text-gray-900 mb-4">₹{p.price}</p>
+
+                {/* Cart Buttons */}
+                <div className="mt-auto">
+                  {user ? (
+                    qty > 0 ? (
+                      <div className="flex items-center justify-center gap-4">
+                        <button
+                          onClick={() => handleDecrease(p._id)}
+                          className="px-3 py-1 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition"
+                        >
+                          −
+                        </button>
+
+                        <span className="text-gray-800 font-semibold text-lg">
+                          {qty}
+                        </span>
+
+                        <button
+                          onClick={() => handleAdd(p._id)}
+                          className="px-3 py-1 bg-gray-200 text-gray-700 rounded hover:bg-gray-300 transition"
+                        >
+                          +
+                        </button>
+                      </div>
+                    ) : (
+                      <button
                         onClick={() => handleAdd(p._id)}
+                        className="w-full bg-blue-600 text-white py-2 rounded-lg font-medium hover:bg-blue-700 transition"
                       >
-                        +
-                      </Button>
-                    </div>
+                        Add to Cart
+                      </button>
+                    )
                   ) : (
-                    // if not in cart yet
-                    <Button
-                      onClick={() => handleAdd(p._id)}
-                      className="w-100"
-                      variant="primary"
+                    <button
+                      disabled
+                      className="w-full bg-gray-300 text-gray-600 py-2 rounded-lg cursor-not-allowed"
                     >
-                      Add to Cart
-                    </Button>
-                  )
-                ) : (
-                  // if user not logged in
-                  <Button className="w-100" variant="outline-secondary" disabled>
-                    Login to Add
-                  </Button>
-                )}
+                      Login to Add
+                    </button>
+                  )}
+                </div>
               </div>
-            </Col>
+            </div>
           );
         })}
-      </Row>
+      </div>
     </div>
   );
 };
