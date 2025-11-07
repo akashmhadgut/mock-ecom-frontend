@@ -1,70 +1,85 @@
-# Getting Started with Create React App
+ # ✅ **README for Frontend Repository** (`mock-ecom-frontend`)
+ 
+# 🛍️ Mock E-Commerce Cart — Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend of the Mock E-Commerce Shopping Cart Application, built for the Vibe Commerce internship assignment.
 
-## Available Scripts
+The frontend is developed using **React**, and communicates with a Node/Express backend using REST APIs. It displays products, allows adding/removing items from the cart, calculates totals, and performs a mock checkout.
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🌐 Live Demo
+https://mock-ecom-frontend.onrender.com/
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🚀 Tech Stack
+| Feature | Technology |
+|--------|------------|
+| UI Library | React |
+| HTTP Client | Axios |
+| Styling | CSS, Tailwind, Bootstrap |
+| State Handling | React Hooks |
+| API Source | Fake Store API + Custom Backend API |
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## ✨ Features
+- Product listing page
+- Add to Cart functionality
+- Update product quantity in cart
+- Remove cart items
+- Display cart total dynamically
+- Checkout modal (Name + Email)
+- after checkout card get empty again
+- Generate receipt with timestamp
+- Responsive layout for mobile & desktop
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 📁 Project Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+src/
+│── components/
+│── pages/
+│── api/
+│── App.js
+│── index.js
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🔧 Setup & Run Locally
 
-### `npm run eject`
+### 1️⃣ Clone the repository
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+git clone https://github.com/akashmhadgut/mock-ecom-frontend
+cd mock-ecom-frontend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### 2️⃣ Install dependencies
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+npm install
 
-## Learn More
+### 3️⃣ Create `.env` file
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+REACT_APP_API_URL=http://localhost:5000
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### 4️⃣ Start the project
 
-### Code Splitting
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## 🤝 Backend Repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+[https://github.com/akashmhadgut/mock-ecom-backend](https://github.com/akashmhadgut/mock-ecom-backend)
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🎥 Demo Video
 
-### Advanced Configuration
+[https://www.loom.com/share/94e7584b6469423d8f7f34a1264ce7ce](https://www.loom.com/share/94e7584b6469423d8f7f34a1264ce7ce)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 📜 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This project is created for educational and evaluation purposes.
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
