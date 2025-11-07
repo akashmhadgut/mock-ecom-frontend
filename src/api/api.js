@@ -1,26 +1,8 @@
-// // frontend/src/api.js
-// import axios from "axios";
-
-// const API = axios.create({
-//   baseURL: "http://localhost:5000/api",
-// });
-
-// // Automatically attach JWT token (if logged in)
-// API.interceptors.request.use((config) => {
-//   const token = localStorage.getItem("token");
-//   if (token) config.headers.Authorization = `Bearer ${token}`;
-//   return config;
-// });
-
-// export default API;
-
-
-
 // frontend/src/api/api.js
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://mock-ecom-backend.onrender.com/api", // ✅ Updated to Render URL
 });
 
 // Automatically attach token to every request if present
