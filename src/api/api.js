@@ -2,8 +2,9 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://mock-ecom-backend.onrender.com/api", // ✅ Updated to Render URL
+  baseURL: "https://mock-ecom-backend.onrender.com/api",
 });
+
 
 // Automatically attach token to every request if present
 API.interceptors.request.use((config) => {
