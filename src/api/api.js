@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "https://mock-ecom-backend.onrender.com/api",
+  baseURL: "https://mock-ecom-backend-1.onrender.com/api",
 });
 
 
